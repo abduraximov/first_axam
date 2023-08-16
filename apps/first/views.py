@@ -12,9 +12,9 @@ class CountAPIView(APIView):
         data = [
             {
                 "vacancy_count": vacancy_count,
-                 "company_count": company_count,
-                 "resume_count": resume_count
-             },
+                "company_count": company_count,
+                "resume_count": resume_count
+            }
         ]
         return Response(data)
 
