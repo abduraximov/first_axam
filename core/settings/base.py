@@ -50,6 +50,7 @@ CUSTOM_APPS = [
     "apps.first",
     "apps.second",
     "apps.third",
+    "apps.fourth"
 ]
 
 THIRD_PARTY_APPS = [
@@ -59,8 +60,11 @@ THIRD_PARTY_APPS = [
 ]
 
 REST_FRAMEWORK = {
+    # "DEFAULT_AUTHENTICATION_CLASSES": (
+    #     "rest_framework.authentication.SessionAuthentication",
+    # ),
     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework.authentication.SessionAuthentication",
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
     "DEFAULT_FILTER_BACKENDS": (
         "django_filters.rest_framework.DjangoFilterBackend",
@@ -68,6 +72,9 @@ REST_FRAMEWORK = {
     ),
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": 10,
+}
+SIMPLE_JWT = {
+    'ROTATE_REFRESH_TOKENS': True,
 }
 
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PARTY_APPS
