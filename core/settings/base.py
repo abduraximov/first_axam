@@ -49,6 +49,7 @@ CUSTOM_APPS = [
     "apps.common",
     "apps.first",
     "apps.second",
+    "apps.third",
 ]
 
 THIRD_PARTY_APPS = [

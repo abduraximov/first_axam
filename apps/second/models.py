@@ -7,7 +7,6 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class Company(BaseModel):
     name = models.CharField(max_length=64)
 
-
     def __str__(self):
         return self.name
 
@@ -20,7 +19,7 @@ class Product(BaseModel):
                                 null=True,
                                 blank=True
                                 )
-    discount = models.IntegerField(max_length=100, null=True, blank=True)
+    discount = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.name
